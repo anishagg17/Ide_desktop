@@ -1,32 +1,32 @@
 import React, { ChangeEvent } from 'react'
-// import styled from 'styled-components'
+import AceEditor from "react-ace";
+import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/theme-github";
 
 type Props = {
   value: string
-  onValueChange: (event: ChangeEvent<HTMLTextAreaElement>) => void
+  onValueChange: (event: string) => void
 }
 
-// const IO = styled.div`
-//   textarea {
-//     outline: none;
-//     font-family: monospace;
-//     font-weight: 300;
-//     background-color: #1a2235;
-//     color: white;
-//     height: 100vh;
-//     font-size: 14px;
-//     width: 65vw;
-//     resize: none;
-//     padding: 15px;
-//     box-sizing: border-box;
-//   }
-// `
-
 const Editor: React.FC<Props> = ({ value, onValueChange }) => {
+  const onChange=(newValue:string)=> {
+    onValueChange( newValue);
+  }
+
   return (
-    <div>
-      <textarea value={value} onChange={onValueChange} />
-    </div>
+    <AceEditor
+    mode="java"
+    theme="github"
+    value={value}
+    onChange={onChange}
+    fontSize={16}
+    name="UNIQUE_ID_OF_DIV"
+    editorProps={{ $blockScrolling: true }}
+    style={{
+      width:"100%",
+      height:"100%",
+    }}
+  />
   )
 }
 
