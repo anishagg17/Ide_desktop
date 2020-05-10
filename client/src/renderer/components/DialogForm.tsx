@@ -1,8 +1,10 @@
 import React, { useState, MouseEvent, ChangeEvent, FC } from "react";
-// import styled from 'styled-components'
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+
 import Editor from "./Editor";
 import { Compile } from "./Compile";
-import Button from "./Button";
 import SideNav from "./SideNav";
 export type StateByProps = {};
 
@@ -93,20 +95,50 @@ const DialogForm: FC<Porps> = ({}) => {
       />
 
       <Editor value={files[current]} onValueChange={_handleValueChange} />
-      <div>
-        <div>Input</div>
-        <textarea value={input} name="input" onChange={handleIOChange} />
-        <div>Output</div>
-        <textarea
+      <div
+        style={{
+          width: "30%",
+          height: "100%",
+          marginRight: "5px",
+        }}
+      >
+        <Typography variant="h5" gutterBottom>
+          Input
+        </Typography>
+        <TextField
+          id="outlined-multiline-static"
+          label="Multiline"
+          multiline
+          rows={4}
+          variant="outlined"
+          name="input"
+          onChange={handleIOChange}
+          value={input}
+        />
+        <Typography variant="h5" gutterBottom>
+          Output
+        </Typography>
+        <TextField
+          id="outlined-multiline-static"
+          label="Multiline"
+          multiline
+          rows={4}
+          variant="outlined"
+          onChange={handleIOChange}
           value={output}
           name="output"
-          readOnly
-          color={color}
-          onChange={handleIOChange}
         />
-        <button onClick={handelCompile} disabled={loading} type="submit">
+        <Button
+          onClick={handelCompile}
+          disabled={loading}
+          color="primary"
+          style={{
+            width: "100%",
+            margin: "5px",
+          }}
+        >
           {loading ? "Loading" : "Compile"}
-        </button>
+        </Button>
       </div>
     </div>
   );

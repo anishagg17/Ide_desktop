@@ -18,6 +18,7 @@ const Editor: React.FC<Props> = ({ value, onValueChange }) => {
     mode="java"
     theme="github"
     value={value}
+    // showGutter={false}
     onChange={onChange}
     fontSize={16}
     name="UNIQUE_ID_OF_DIV"
