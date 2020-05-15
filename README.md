@@ -6,7 +6,7 @@
 [![server: Node](https://img.shields.io/badge/server-Node-green)](https://github.com/anishagg17/Ide_desktop)
 [![styling: Scss](https://img.shields.io/badge/styling-Scss-blueviolet)](https://github.com/anishagg17/Ide_desktop)
 [![language: TypeScript](https://img.shields.io/badge/language-TypeScript-red)](https://github.com/anishagg17/Ide_desktop)
-[![bundler: WebPack](https://img.shields.io/badge/language-WebPack-yellow)](https://github.com/anishagg17/Ide_desktop)
+[![bundler: WebPack](https://img.shields.io/badge/bundler-WebPack-yellow)](https://github.com/anishagg17/Ide_desktop)
 
 This is an IDE built using [Electron](http://electron.atom.io/), ReactJs, NodeJs, Webpack, TypeScript, JavaScript.
 
