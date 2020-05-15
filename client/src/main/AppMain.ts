@@ -1,31 +1,28 @@
-import { app } from 'electron'
-import { initializeIpcEvents, releaseIpcEvents } from './IPCEvents'
-import { createMainWindow } from './WindowManager'
-import { createMainMenu } from './MainMenu'
+import { app } from "electron";
+import { createMainWindow } from "./WindowManager";
+import { createMainMenu } from "./MainMenu";
 
-app.name = 'Starter'
+app.name = "Starter";
 
-app.on('ready', () => {
+app.on("ready", () => {
   /// #if env == 'DEBUG'
-  console.log('Initialize Application')
+  console.log("Initialize Application");
   /// #endif
 
-  createMainWindow()
-  createMainMenu()
-  initializeIpcEvents()
-})
+  createMainWindow();
+  createMainMenu();
+});
 
 /// #if env == 'DEBUG'
-app.on('quit', () => {
-  console.log('Application is quit')
-})
+app.on("quit", () => {
+  console.log("Application is quit");
+});
 /// #endif
 
-app.on('window-all-closed', () => {
+app.on("window-all-closed", () => {
   /// #if env == 'DEBUG'
-  console.log('All of the window was closed.')
+  console.log("All of the window was closed.");
   /// #endif
 
-  releaseIpcEvents()
-  app.quit()
-})
+  app.quit();
+});
