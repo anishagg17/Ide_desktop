@@ -21,7 +21,7 @@
     "appFileDescription": "Electron application"
   },
   "scripts": {
-    "start": "npm run watch",
+    "start": "concurrently \"npm run server\" \"npm run watch\" \"npm run app\"",
     "app": "electron --inspect=5858 src/",
     "test": "jest",
     "tsc": "tsc --rootDir ./src/ --noEmit --skipLibCheck",
