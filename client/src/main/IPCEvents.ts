@@ -6,9 +6,8 @@ import {
   OpenDialogOptions,
   MessageBoxOptions,
   SaveDialogOptions,
-  IpcMainInvokeEvent
-} from 'electron'
-import { IPCKey } from '../common/Constants'
+  IpcMainInvokeEvent,
+} from "electron";
 
 /**
  * Occurs when show of a file open dialog is requested.
@@ -17,15 +16,15 @@ import { IPCKey } from '../common/Constants'
  */
 const onShowOpenDialog = async (
   ev: IpcMainInvokeEvent,
-  options: OpenDialogOptions
+  options: OpenDialogOptions,
 ) => {
-  const win = BrowserWindow.fromWebContents(ev.sender)
+  const win = BrowserWindow.fromWebContents(ev.sender);
   if (win) {
-    return dialog.showOpenDialog(win, options)
+    return dialog.showOpenDialog(win, options);
   } else {
-    throw new Error('Message sender window does not exist')
+    throw new Error("Message sender window does not exist");
   }
-}
+};
 
 /**
  * Occurs when show of a save dialog is requested.
@@ -34,15 +33,15 @@ const onShowOpenDialog = async (
  */
 const onShowSaveDialog = async (
   ev: IpcMainInvokeEvent,
-  options: SaveDialogOptions
+  options: SaveDialogOptions,
 ) => {
-  const win = BrowserWindow.fromWebContents(ev.sender)
+  const win = BrowserWindow.fromWebContents(ev.sender);
   if (win) {
-    return dialog.showSaveDialog(win, options)
+    return dialog.showSaveDialog(win, options);
   } else {
-    throw new Error('Message sender window does not exist')
+    throw new Error("Message sender window does not exist");
   }
-}
+};
 
 /**
  * Occurs when show of a message box is requested.
@@ -51,15 +50,15 @@ const onShowSaveDialog = async (
  */
 const onShowMessageBox = async (
   ev: IpcMainInvokeEvent,
-  options: MessageBoxOptions
+  options: MessageBoxOptions,
 ) => {
-  const win = BrowserWindow.fromWebContents(ev.sender)
+  const win = BrowserWindow.fromWebContents(ev.sender);
   if (win) {
-    return dialog.showMessageBox(win, options)
+    return dialog.showMessageBox(win, options);
   } else {
-    throw new Error('Message sender window does not exist')
+    throw new Error("Message sender window does not exist");
   }
-}
+};
 
 /**
  * Occurs in a request to open URL in a shell
@@ -68,39 +67,30 @@ const onShowMessageBox = async (
  */
 const onShowURL = async (
   ev: IpcMainInvokeEvent,
-  url: string
+  url: string,
 ): Promise<void> => {
-  return shell.openExternal(url)
-}
+  return shell.openExternal(url);
+};
 
 /** A value indicating that an IPC events has been initialized. */
-let initialized = false
+let initialized = false;
 
 /**
  * Initialize IPC events.
  */
 export const initializeIpcEvents = () => {
   if (initialized) {
-    return
+    return;
   }
-  initialized = true
-
-  ipcMain.handle(IPCKey.ShowOpenDialog, onShowOpenDialog)
-  ipcMain.handle(IPCKey.ShowSaveDialog, onShowSaveDialog)
-  ipcMain.handle(IPCKey.ShowMessageBox, onShowMessageBox)
-  ipcMain.handle(IPCKey.ShowURL, onShowURL)
-}
+  initialized = true;
+};
 
 /**
  * Release IPC events.
  */
 export const releaseIpcEvents = () => {
   if (initialized) {
-    ipcMain.removeAllListeners(IPCKey.ShowOpenDialog)
-    ipcMain.removeAllListeners(IPCKey.ShowSaveDialog)
-    ipcMain.removeAllListeners(IPCKey.ShowMessageBox)
-    ipcMain.removeAllListeners(IPCKey.ShowURL)
   }
 
-  initialized = false
-}
+  initialized = false;
+};
