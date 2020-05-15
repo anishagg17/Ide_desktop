@@ -1,7 +1,7 @@
 # Desktop IDE
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/anishagg17/Ide_desktop)
-[![App: Electron](https://img.shields.io/badge/App-Electron-orange)](https://github.com/anishagg17/Ide_desktop)
+[![app: Electron](https://img.shields.io/badge/app-Electron-orange)](https://github.com/anishagg17/Ide_desktop)
 [![client: React](https://img.shields.io/badge/client-React-blue)](https://github.com/anishagg17/Ide_desktop)
 [![server: Node](https://img.shields.io/badge/server-Node-green)](https://github.com/anishagg17/Ide_desktop)
 [![styling: Scss](https://img.shields.io/badge/styling-Scss-blueviolet)](https://github.com/anishagg17/Ide_desktop)
