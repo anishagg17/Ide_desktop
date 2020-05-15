@@ -1,6 +1,6 @@
 {
-  "name": "electron-starter",
-  "description": "Electron Starter Kit.",
+  "name": "ide_desktop",
+  "description": "Desktop IDE",
   "version": "2.0.0",
   "author": "akabeko",
   "license": "MIT",
@@ -8,17 +8,17 @@
   "main": "main.js",
   "keywords": [
     "Electron",
-    "Starter"
+    "IDE"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akabekobeko/examples-electron.git"
+    "url": "git+https://github.com/anishagg17/Ide_desktop.git"
   },
   "config": {
-    "app": "Starter",
-    "appCompanyName": "Company",
-    "appLegalCopyright": "Copylight (C) USERNAME, All right reserved.",
-    "appFileDescription": "Electron application"
+    "app": "IDE_desktop",
+    "appCompanyName": "IDE",
+    "appLegalCopyright": "Copylight (C) anishagg17, All right reserved.",
+    "appFileDescription": "Desktop IDE"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run watch\" \"npm run app\"",
