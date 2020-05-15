@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
 type Porps = {
   handleNewFile: (e: ChangeEvent<HTMLTextAreaElement>) => void
   newFile: string
+  current: string
   files: { [key: string]: string }
   _handleOpenPath: (path: string) => void
   createFile: () => void | undefined
@@ -50,6 +51,7 @@ type Porps = {
 const SideNav: FC<Porps> = ({
   handleNewFile,
   newFile,
+  current,
   files,
   _handleOpenPath,
   createFile,
@@ -57,7 +59,6 @@ const SideNav: FC<Porps> = ({
   const classes = useStyles()
 
   const error = !newFile.endsWith('.py') && !newFile.endsWith('.cpp')
-
   return (
     <div className={classes.root}>
       <Drawer
@@ -72,7 +73,7 @@ const SideNav: FC<Porps> = ({
         <Divider />
         <List>
           {Object.keys(files).map((text, index) => (
-            <ListItem button key={text} onClick={() => _handleOpenPath(text)}>
+            <ListItem button key={text} onClick={() => _handleOpenPath(text)} selected={current===text}>
               <ListItemText primary={text} />
             </ListItem>
           ))}

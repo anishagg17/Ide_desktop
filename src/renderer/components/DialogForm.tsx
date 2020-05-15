@@ -1,11 +1,11 @@
-import React, { useState, MouseEvent, ChangeEvent, FC } from "react";
-import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+import React, { useState, MouseEvent, ChangeEvent, FC } from 'react';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
-import Editor from "./Editor";
-import { Compile } from "./Compile";
-import SideNav from "./SideNav";
+import Editor from './Editor';
+import { Compile } from './Compile';
+import SideNav from './SideNav';
 export type StateByProps = {};
 
 export type DispatchByProps = {};
@@ -15,18 +15,18 @@ type Porps = StateByProps & DispatchByProps;
 const Files: {
   [key: string]: string,
 } = {
-  "App.cpp":
+  'App.cpp':
     "#include<iostream> \n using namespace std;    \n int main(){ \n cout<<'2'; \n return 0; \n }",
-  "App.py": "#code here\nprint(3)",
+  'App.py': '#code here\nprint(3)',
 };
 
 const DialogForm: FC<Porps> = ({}) => {
   const [state, setState] = useState({
     files: Files,
-    current: "App.py",
-    newFile: "",
-    output: "",
-    input: "",
+    current: 'App.py',
+    newFile: '',
+    output: '',
+    input: '',
     loading: false,
     status: 200,
   });
@@ -39,9 +39,9 @@ const DialogForm: FC<Porps> = ({}) => {
     let files = {
       ...state.files,
     };
-    files[state.newFile.toString()] = "";
+    files[state.newFile.toString()] = '';
     // console.log("files", files);
-    setState({ ...state, files, newFile: "" });
+    setState({ ...state, files, newFile: '' });
   };
 
   const _handleValueChange = (code: string) => {
@@ -59,7 +59,7 @@ const DialogForm: FC<Porps> = ({}) => {
     const { current, files, input, output } = state;
     const code = files[current];
     const res = await Compile(code, input, output, current);
-    console.log("res", res);
+    // console.log('res', res);
     setState({ ...state, output: res.out, loading: false, status: res.status });
   };
   const handleIOChange:
@@ -74,20 +74,21 @@ const DialogForm: FC<Porps> = ({}) => {
 
   const { output, input, loading, status, files, newFile, current } = state;
 
-  const color: string = status === 200 ? "white" : "red";
+  const color: string = status === 200 ? 'white' : 'red';
 
   return (
     <div
       style={{
-        display: "flex",
-        fontFamily: "sans-serif",
-        width: "100vw",
-        height: "100vh",
-        justifyContent: "space-between",
+        display: 'flex',
+        fontFamily: 'sans-serif',
+        width: '100vw',
+        height: '100vh',
+        justifyContent: 'space-between',
       }}
     >
       <SideNav
         files={files}
+        current={current}
         _handleOpenPath={_handleOpenPath}
         newFile={newFile}
         handleNewFile={handleNewFile}
@@ -97,9 +98,9 @@ const DialogForm: FC<Porps> = ({}) => {
       <Editor value={files[current]} onValueChange={_handleValueChange} />
       <div
         style={{
-          width: "30%",
-          height: "100%",
-          marginRight: "5px",
+          width: '30%',
+          height: '100%',
+          marginRight: '5px',
         }}
       >
         <Typography variant="h5" gutterBottom>
@@ -133,11 +134,11 @@ const DialogForm: FC<Porps> = ({}) => {
           disabled={loading}
           color="primary"
           style={{
-            width: "100%",
-            margin: "5px",
+            width: '100%',
+            margin: '5px',
           }}
         >
-          {loading ? "Loading" : "Compile"}
+          {loading ? 'Loading' : 'Compile'}
         </Button>
       </div>
     </div>
