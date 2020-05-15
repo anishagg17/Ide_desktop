@@ -1,11 +1,14 @@
 # Desktop IDE
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/anishagg17/Ide_desktop)
-[![App: Electron](https://img.shields.io/badge/App-Electron-lightgrey)](https://github.com/anishagg17/Ide_desktop)
+[![App: Electron](https://img.shields.io/badge/App-Electron-orange)](https://github.com/anishagg17/Ide_desktop)
 [![client: React](https://img.shields.io/badge/client-React-blue)](https://github.com/anishagg17/Ide_desktop)
 [![server: Node](https://img.shields.io/badge/server-Node-green)](https://github.com/anishagg17/Ide_desktop)
+[![styling: Scss](https://img.shields.io/badge/styling-Scss-blueviolet)](https://github.com/anishagg17/Ide_desktop)
+[![language: JS + TS](https://img.shields.io/badge/language-JS + TS-important)](https://github.com/anishagg17/Ide_desktop)
+[![bundler: WebPack](https://img.shields.io/badge/language-WebPack-lightgrey)](https://github.com/anishagg17/Ide_desktop)
 
-This is a starter kit of the [Electron](http://electron.atom.io/) application development.
+This is an IDE built using [Electron](http://electron.atom.io/), ReactJs, NodeJs, Webpack, TypeScript, JavaScript.
 
 ![Screenshot](./ss.png)
 
