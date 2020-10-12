@@ -2,7 +2,7 @@
   "name": "ide_desktop",
   "description": "Desktop IDE",
   "version": "2.0.0",
-  "author": "akabeko",
+  "author": "anishagg17",
   "license": "MIT",
   "private": true,
   "main": "main.js",
