@@ -2,7 +2,7 @@
   "name": "electron-starter",
   "description": "Electron Starter Kit.",
   "version": "2.0.0",
-  "author": "akabeko",
+  "author": "anishagg17",
   "license": "MIT",
   "main": "assets/main.js",
   "keywords": [
