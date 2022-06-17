@@ -75,7 +75,7 @@
     "cross-conf-env": "^1.1.2",
     "css-loader": "^3.4.2",
     "devtron": "^1.4.0",
-    "electron": "^8.0.1",
+    "electron": "^15.5.5",
     "electron-packager": "^14.2.1",
     "ifdef-loader": "^2.1.4",
     "jest": "^25.1.0",
